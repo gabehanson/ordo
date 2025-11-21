@@ -1,0 +1,10 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.rhistory
+.RData
+.DS_Store
