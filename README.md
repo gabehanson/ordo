@@ -141,6 +141,6 @@ expl = variance_explained_mixomics(X_clean, y, ncomp=2)
 
 
     
-Status
+## Status
 
 Actively developed and used in ongoing spatial immunology and transcriptomics research.
