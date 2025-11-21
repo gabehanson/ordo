@@ -1,10 +1,10 @@
-Ordo
+# Ordo
 
 A structured and extensible pipeline for PLS and OPLS modeling in high-dimensional biological data.
 
 Ordo was developed during the later stages of GH’s graduate work to provide a robust, generalizable, and transparent Python implementation of orthogonal partial least squares (OPLS). The package integrates preprocessing, feature selection, latent-variable modeling, variance partitioning, and model validation tools into a single coherent workflow.
 
-Core Features
+## Core Features
 
 OPLS and PLS modeling (via pyopls and scikit-learn)
 
@@ -26,7 +26,7 @@ Class imbalance correction via balanced bootstrapping
 
 Designed for high-dimensional biological data, including multiplexed imaging, transcriptomics, single-cell, and spatial datasets
 
-Python requirements:
+## Requirements:
 python >= 3.9
 
 core dependencies
@@ -38,11 +38,11 @@ seaborn
 scikit-learn
 pyopls
 
+## Installation
 install with
 pip install numpy pandas scipy matplotlib seaborn scikit-learn pyopls
 
-
-Optional: R / mixOmics backend for variance explained
+## Optional: R / mixOmics backend for variance explained
 
 The scikit-learn PLS implementation does not compute the true fraction of variance explained per component. Ordo includes an optional R bridge that uses the mixOmics pls() implementation (equivalent to the MATLAB algorithm) to compute:
 
@@ -57,9 +57,7 @@ mixOmics
 igraph
 rpy2 >= 3.5
 
-
-
-Recommended installation using micromamba
+### Recommended installation using micromamba
 
 to install, create a dedicated R enviornment using micromamba to provide a clean R installation with compatible shared libraries: 
 
@@ -100,7 +98,7 @@ ro.r("library(mixOmics)")
 
 if this loads cleanly, your R bridge is looking good
     
-Project Structure
+## Project Structure
     
 ordo/
 │
@@ -116,7 +114,7 @@ ordo/
       └── r2py_testing.ipynb
 
     
-Getting started:
+# Getting started:
     
 from ordo import (
     preprocess_data,
@@ -126,16 +124,17 @@ from ordo import (
     plot_scores_scatter
 )
 
-# Preprocess
+## pipeline 
+### Preprocess
 X_clean, y = preprocess_data(X, y)
 
-# Fit PLS/OPLS
+### Fit PLS/OPLS
 model, Z, opls = fit_pls_model(X_clean, y, n_components=2, orthogonalize=True)
 
-# Bootstrap stability
+### Bootstrap stability
 results = bootstrap_pls_analysis(X_clean, y)
 
-# Variance explained (optional R backend)
+### Variance explained (optional R backend)
 expl = variance_explained_mixomics(X_clean, y, ncomp=2)
 
 
