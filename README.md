@@ -99,9 +99,10 @@ ro.r("library(mixOmics)")
 if this loads cleanly, your R bridge is looking good
     
 ## Project Structure
-    
+
+```
 ordo/
-│
+
 ├── core.py              # PLS/OPLS modeling, preprocessing, VIPs, permutation tests
 ├── bootstrap.py         # Bootstrap PLS/OPLS with balanced resampling
 ├── mixomics.py          # Optional R/mixOmics functions for variance explained
@@ -113,6 +114,7 @@ ordo/
 └── examples/
       └── r2py_testing.ipynb
 
+```
     
 # Getting started:
     
